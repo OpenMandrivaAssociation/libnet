@@ -4,14 +4,13 @@
 
 Summary:	A C library for portable packet creation
 Name:		libnet
-Version:	1.1.3
-Release:	%mkrel 2
+Version:	1.1.4
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.sourceforge.net/projects/libnet-dev/
 Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}.tar.gz
 Patch0:		libnet-1.1.2.1-format_not_a_string_literal_and_no_format_arguments.diff
-Patch1:		libnet-1.1.3-antiborker.diff
 BuildRequires:	libpcap-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -58,7 +57,6 @@ test code for more detailed information.
 
 %setup -q -n libnet-%{version}
 %patch0 -p0 -b .format_not_a_string_literal_and_no_format_arguments
-%patch1 -p0
 
 # Keep the sample directory untouched by make
 rm -rf __dist_sample
