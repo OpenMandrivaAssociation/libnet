@@ -5,13 +5,13 @@
 Summary:	A C library for portable packet creation
 Name:		libnet
 Version:	1.1.5
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.sourceforge.net/projects/libnet-dev/
 Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}.tar.gz
 BuildRequires:	libpcap-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+
 
 %description
 Libnet is an API to help with the construction and handling of network packets.
