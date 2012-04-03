@@ -4,14 +4,13 @@
 
 Summary:	A C library for portable packet creation
 Name:		libnet
-Version:	1.1.5
-Release:	%mkrel 3
+Version:	1.1.6
+Release:	1
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.sourceforge.net/projects/libnet-dev/
 Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}.tar.gz
 BuildRequires:	libpcap-devel
-
 
 %description
 Libnet is an API to help with the construction and handling of network packets.
@@ -68,7 +67,6 @@ cp -a sample __dist_sample
 %make
 
 %install
-rm -rf %{buildroot}
 
 %makeinstall_std INSTALL='install -p'
 
@@ -93,25 +91,12 @@ for file in CHANGELOG CONTRIB; do
   mv -f doc/$file.new doc/$file
 done
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root)
 %doc README doc/CHANGELOG doc/COPYING
 %attr(0755,root,root) %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
-%doc doc/BUGS doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING
+%doc doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING
 %doc doc/RAWSOCKET_NON_SEQUITUR doc/TODO doc/html/ __dist_sample/sample/
 %{_bindir}/libnet-config
 %{_includedir}/libnet.h
@@ -119,5 +104,3 @@ rm -rf %{buildroot}
 %{_includedir}/libnet/*.h
 %{_libdir}/*.so
 %{_mandir}/man3/*
-
-
