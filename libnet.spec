@@ -111,7 +111,7 @@ rm -rf %{buildroot}
 
 %files -n %{develname}
 %defattr(-,root,root)
-%doc doc/BUGS doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING
+%doc doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING
 %doc doc/RAWSOCKET_NON_SEQUITUR doc/TODO doc/html/ __dist_sample/sample/
 %{_bindir}/libnet-config
 %{_includedir}/libnet.h
