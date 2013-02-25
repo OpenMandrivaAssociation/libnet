@@ -4,8 +4,8 @@
 
 Summary:	A C library for portable packet creation
 Name:		libnet
-Version:	1.1.5
-Release:	%mkrel 7
+Version:	1.1.6
+Release:	2
 License:	BSD
 Group:		System/Libraries
 URL:		http://www.sourceforge.net/projects/libnet-dev/
