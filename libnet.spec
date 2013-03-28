@@ -62,14 +62,15 @@ mkdir __dist_sample
 cp -a sample __dist_sample
 
 %build
-
+#fix build with new automake
+sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
+libtoolize --copy --force
+autoreconf -fi
 %configure2_5x
 
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std INSTALL='install -p'
 
 # Don't install any static .a and libtool .la files
@@ -93,24 +94,11 @@ for file in CHANGELOG CONTRIB; do
   mv -f doc/$file.new doc/$file
 done
 
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root)
 %doc README doc/CHANGELOG doc/COPYING
 %attr(0755,root,root) %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %doc doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING
 %doc doc/RAWSOCKET_NON_SEQUITUR doc/TODO doc/html/ __dist_sample/sample/
 %{_bindir}/libnet-config
