@@ -10,7 +10,7 @@ License:	BSD
 Group:		System/Libraries
 Url:		http://www.sourceforge.net/projects/libnet-dev/
 Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}-rc3.tar.gz
-BuildRequires:	libpcap-devel
+BuildRequires:	pkgconfig(libpcap)
 
 %description
 Libnet is an API to help with the construction and handling of network packets.
