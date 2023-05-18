@@ -1,4 +1,4 @@
-%define	major	1
+%define	major	9
 %define libname	%mklibname net %{major}
 %define devname	%mklibname net -d
 
