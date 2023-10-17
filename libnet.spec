@@ -4,12 +4,13 @@
 
 Summary:	A C library for portable packet creation
 Name:		libnet
-Version:	1.2
-Release:	0.rc3.1
+Version:	1.3
+Release:	1
 License:	BSD
 Group:		System/Libraries
 Url:		http://www.sourceforge.net/projects/libnet-dev/
-Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}-rc3.tar.gz
+Source0:	https://github.com/libnet/libnet/releases/download/v1.3/libnet-%{version}.tar.gz
+#Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}-rc3.tar.gz
 BuildRequires:	pkgconfig(libpcap)
 
 %description
@@ -43,7 +44,7 @@ which to write network tools and network test code. See the manpage and sample
 test code for more detailed information.
 
 %prep
-%autosetup -n %{name}-%{version}-rc3 -p1
+%autosetup -n %{name}-%{version} -p1
 # Keep the sample directory untouched by make
 rm -rf __dist_sample
 mkdir __dist_sample
