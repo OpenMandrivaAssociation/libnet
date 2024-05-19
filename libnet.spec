@@ -46,22 +46,21 @@ test code for more detailed information.
 %prep
 %autosetup -n %{name}-%{version} -p1
 # Keep the sample directory untouched by make
-rm -rf __dist_sample
-mkdir __dist_sample
-cp -a sample __dist_sample
+#rm -rf __dist_sample
+#mkdir __dist_sample
+#cp -a sample __dist_sample
 #fix build with new automake
-sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
-libtoolize --copy --force
+#sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
+#libtoolize --copy --force
 #autoreconf -fi
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
-
-%make
+%make_build
 
 %install
-%makeinstall_std INSTALL='install -p'
+%make_install INSTALL='install -p'
 
 # Prepare samples directory and perform some fixes
 rm -rf __dist_sample/sample/win32
