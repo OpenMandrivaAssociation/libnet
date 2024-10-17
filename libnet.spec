@@ -8,7 +8,7 @@ Version:	1.3
 Release:	1
 License:	BSD
 Group:		System/Libraries
-Url:		http://www.sourceforge.net/projects/libnet-dev/
+Url:		https://www.sourceforge.net/projects/libnet-dev/
 Source0:	https://github.com/libnet/libnet/releases/download/v1.3/libnet-%{version}.tar.gz
 #Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}-rc3.tar.gz
 BuildRequires:	pkgconfig(libpcap)
