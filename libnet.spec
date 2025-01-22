@@ -14,6 +14,9 @@ Source0:	https://github.com/libnet/libnet/releases/download/v1.3/libnet-%{versio
 BuildRequires:	pkgconfig(libpcap)
 BuildRequires:	autoconf
 BuildRequires:	autoconf-archive
+BuildRequires:  automake
+BuildRequires:  doxygen
+BuildRequires:  libtool
 
 %description
 Libnet is an API to help with the construction and handling of network packets.
