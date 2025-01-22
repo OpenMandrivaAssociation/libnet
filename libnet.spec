@@ -58,6 +58,7 @@ test code for more detailed information.
 #sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
 #libtoolize --copy --force
 #autoreconf -fi
+autoreconf -vfi
 
 %build
 %configure2_5x \
