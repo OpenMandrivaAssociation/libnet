@@ -11,6 +11,8 @@ Group:		System/Libraries
 Url:		https://www.sourceforge.net/projects/libnet-dev/
 Source0:	https://github.com/libnet/libnet/releases/download/v1.3/libnet-%{version}.tar.gz
 #Source0:	http://downloads.sourceforge.net/libnet-dev/%{name}-%{version}-rc3.tar.gz
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	pkgconfig(libpcap)
 BuildRequires:	autoconf
 BuildRequires:	autoconf-archive
